@@ -98,10 +98,9 @@ int main( )
     Shader shader( "Shaders/modelLoading.vs", "Shaders/modelLoading.frag" );
     
     // Load models
-    Model fish ((char*)"Models/Fishes/TropicalFish01.obj"); // Cargando el modelo
-    Model bed ((char*)"Models/Bed/Bed_S.obj");
-    Model colaFish ((char*)"Models/Fish/colaFish.obj");
-    Model bodyFish ((char*)"Models/Fish/bodyFish.obj");
+    
+    Model silla ((char*)"Models/Silla/Silla.obj");
+    
     glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 100.0f );
     
   
@@ -129,20 +128,11 @@ int main( )
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 
         // Draw the loaded model
-       /* glm::mat4 model(1);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, glfwGetTime()*0.5));
-        model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0f));
-        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        colaFish.Draw(shader);*/
-
-        /*model = glm::mat4(1);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, glfwGetTime()*0.5));
-        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        bodyFish.Draw(shader);*/
+      
 
         glm::mat4 model(1);
         glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        bed.Draw(shader);
+        silla.Draw(shader);
 
         // Swap the buffers
         glfwSwapBuffers( window );
