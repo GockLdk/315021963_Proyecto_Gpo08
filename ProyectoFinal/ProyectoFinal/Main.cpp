@@ -99,7 +99,7 @@ int main( )
     
     // Load models
     
-    Model silla ((char*)"Models/Silla/Silla.obj");
+    Model silla ((char*)"Models/Escritorio/Escritorio.obj");
     
     glm::mat4 projection = glm::perspective( camera.GetZoom( ), ( float )SCREEN_WIDTH/( float )SCREEN_HEIGHT, 0.1f, 100.0f );
     
