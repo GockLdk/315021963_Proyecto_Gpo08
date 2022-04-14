@@ -153,8 +153,8 @@ int main()
 
 	Model Piso((char*)"Models/Esfera/Piso.obj");
 	Model Esfera((char*)"Models/Esfera/Esfera.obj");
-	Model cama((char*)"Models/Cama/Cama.obj");
-
+	/*Model cama((char*)"Models/Cama/Cama.obj");*/
+	Model mueble ((char*)"Models/MuebleTV/Cabinet.obj");
 
 	
 
@@ -196,8 +196,8 @@ int main()
 
 		// Directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.1f, 0.1f, 0.1f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.1f, 0.1f, 0.1f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.6f, 0.6f, 0.6f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.6f, 0.6f, 0.6f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 1.0f, 1.0f, 1.0f);
 
 
@@ -254,6 +254,7 @@ int main()
 
 		//Piso
 		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		Piso.Draw(lightingShader);
@@ -273,10 +274,10 @@ int main()
 
 		// Cama, sin transparencia
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(10.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(5.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		cama.Draw(lightingShader);
+		mueble.Draw(lightingShader);
 		
 		
 		glBindVertexArray(0);
