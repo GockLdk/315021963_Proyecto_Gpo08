@@ -154,7 +154,7 @@ int main()
 	Model Piso((char*)"Models/Esfera/Piso.obj");
 	Model Esfera((char*)"Models/Esfera/Esfera.obj");
 	/*Model cama((char*)"Models/Cama/Cama.obj");*/
-	Model mueble ((char*)"Models/MuebleTV/Cabinet.obj");
+	Model tv ((char*)"Models/TV/TV.obj");
 
 	
 
@@ -277,7 +277,7 @@ int main()
 		model = glm::translate(model, glm::vec3(5.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		mueble.Draw(lightingShader);
+		tv.Draw(lightingShader);
 		
 		
 		glBindVertexArray(0);
