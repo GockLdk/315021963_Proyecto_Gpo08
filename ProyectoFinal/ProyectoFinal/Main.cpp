@@ -151,10 +151,10 @@ int main()
 	Shader lightingShader("Shaders/lighting.vs", "Shaders/lighting.frag");
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
 
-	Model Piso((char*)"Models/Esfera/Piso.obj");
+	Model Casa((char*)"Models/Casa/Casa.obj");
 	Model Esfera((char*)"Models/Esfera/Esfera.obj");
 	/*Model cama((char*)"Models/Cama/Cama.obj");*/
-	Model tv ((char*)"Models/TV/TV.obj");
+	Model puerta ((char*)"Models/Casa/Puerta.obj");
 
 	
 
@@ -252,12 +252,12 @@ int main()
 		//Carga de modelo 
 		view = camera.GetViewMatrix();
 
-		//Piso
+		//Casa
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		Piso.Draw(lightingShader);
+		Casa.Draw(lightingShader);
 
 		// Esfera con Transparencia
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
@@ -274,10 +274,10 @@ int main()
 
 		// Cama, sin transparencia
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(5.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		tv.Draw(lightingShader);
+		puerta.Draw(lightingShader);
 		
 		
 		glBindVertexArray(0);

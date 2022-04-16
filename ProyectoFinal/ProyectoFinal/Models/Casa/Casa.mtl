@@ -1,0 +1,113 @@
+newmtl Piso:Piso2:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Piso:Piso2:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Piso:Piso3:Piso2:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Piso:Piso3:Piso2:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Piso:Piso4:Piso3:Piso2:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Piso:Piso4:Piso3:Piso2:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Piso:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grass.jpg
+Ni 1.00
+newmtl Piso:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Piso:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Piso:phong5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Techo_S.png
+Ns 18.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Piso.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
