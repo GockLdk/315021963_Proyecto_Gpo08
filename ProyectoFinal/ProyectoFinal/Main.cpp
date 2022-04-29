@@ -151,7 +151,7 @@ int main()
 	Shader lightingShader("Shaders/lighting.vs", "Shaders/lighting.frag");
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
 
-	Model Casa((char*)"Models/Casa/Casa.obj");
+	Model Casa ((char*)"Models/Casa/Casa.obj");
 	Model puerta ((char*)"Models/Casa/Puerta.obj");
 	Model marcoVen ((char*)"Models/Casa/MarcoVen.obj");
 	Model cristalVen ((char*)"Models/Casa/CristalVen.obj");
@@ -159,8 +159,17 @@ int main()
 	Model puertaMarA ((char*)"Models/Casa/PuertaMarcA.obj");
 	Model puertaCrisC ((char*)"Models/Casa/PuertaCrisC.obj");
 	Model puertaMarC ((char*)"Models/Casa/PuertaMarcC.obj");
-	
-	/*Model cama((char*)"Models/Cama/Cama.obj");*/
+
+	Model mesa ((char*)"Models/Mesa/Mesa.obj");
+	Model tapete ((char*)"Models/Tapete/Tapete.obj");
+	Model escritorio ((char*)"Models/Escritorio/Escritorio.obj");
+	Model silla ((char*)"Models/Silla/Silla.obj");
+	Model laptop ((char*)"Models/Laptop/Laptop.obj");
+	Model cama ((char*)"Models/Cama/Cama.obj");
+	Model muebleTV ((char*)"Models/MuebleTV/Cabinet.obj");
+	Model tv ((char*)"Models/TV/TV.obj");
+	Model controlTV ((char*)"Models/TV/Control.obj");
+
 	/*Model Esfera((char*)"Models/Esfera/Esfera.obj");*/
 
 	// Set texture units
@@ -344,6 +353,61 @@ int main()
 		// ********************** CASA FIN **********************
 
 
+		// Mesa
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		mesa.Draw(lightingShader);
+		// Tapete
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		tapete.Draw(lightingShader);
+		// Escritorio
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		escritorio.Draw(lightingShader);
+		// Silla
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		silla.Draw(lightingShader);
+		// Laptop
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		laptop.Draw(lightingShader);
+		// Cama
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		cama.Draw(lightingShader);
+		// Mueble TV
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		muebleTV.Draw(lightingShader);
+		// TV
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		tv.Draw(lightingShader);
+		// Control TV
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		controlTV.Draw(lightingShader);
+		
 		glBindVertexArray(0);
 
 
