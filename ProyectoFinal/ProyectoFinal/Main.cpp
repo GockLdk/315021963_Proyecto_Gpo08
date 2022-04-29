@@ -152,11 +152,16 @@ int main()
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
 
 	Model Casa((char*)"Models/Casa/Casa.obj");
-	Model Esfera((char*)"Models/Esfera/Esfera.obj");
-	/*Model cama((char*)"Models/Cama/Cama.obj");*/
 	Model puerta ((char*)"Models/Casa/Puerta.obj");
-
+	Model marcoVen ((char*)"Models/Casa/MarcoVen.obj");
+	Model cristalVen ((char*)"Models/Casa/CristalVen.obj");
+	Model puertaCrisA ((char*)"Models/Casa/PuertaCrisA.obj");
+	Model puertaMarA ((char*)"Models/Casa/PuertaMarcA.obj");
+	Model puertaCrisC ((char*)"Models/Casa/PuertaCrisC.obj");
+	Model puertaMarC ((char*)"Models/Casa/PuertaMarcC.obj");
 	
+	/*Model cama((char*)"Models/Cama/Cama.obj");*/
+	/*Model Esfera((char*)"Models/Esfera/Esfera.obj");*/
 
 	// Set texture units
 	lightingShader.Use();
@@ -252,7 +257,7 @@ int main()
 		//Carga de modelo 
 		view = camera.GetViewMatrix();
 
-		//Casa
+		// ********************** CASA **********************
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -260,26 +265,85 @@ int main()
 		Casa.Draw(lightingShader);
 
 		// Esfera con Transparencia
-		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 0.0, 0.75);
-		Esfera.Draw(lightingShader);
-		glDisable(GL_BLEND);  //Desactiva el canal alfa 
-		// Para que no cambie el color el canal alpha a los demas objetos
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
+		//glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 0.0, 0.75);
+		//Esfera.Draw(lightingShader);
+		//glDisable(GL_BLEND);  //Desactiva el canal alfa 
+		//// Para que no cambie el color el canal alpha a los demas objetos
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
 
-		// Cama, sin transparencia
+		// Puerta Entrada
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		puerta.Draw(lightingShader);
+
+		// Ventana
+		// Marco
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		marcoVen.Draw(lightingShader);
+		// Cristal
+		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 0.5);
+		cristalVen.Draw(lightingShader);
+		glDisable(GL_BLEND);  //Desactiva el canal alfa 
+		// Para que no cambie el color el canal alpha a los demas objetos
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
 		
-		
+		// Puerta de Cristal
+		// Marco que se queda cerrado
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		puertaMarC.Draw(lightingShader);
+		// Cristal que se queda cerrado
+		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 0.5);
+		puertaCrisC.Draw(lightingShader);
+		glDisable(GL_BLEND);  //Desactiva el canal alfa 
+		// Para que no cambie el color el canal alpha a los demas objetos
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
+		// Marco que se abre
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		puertaMarA.Draw(lightingShader);
+		// Cristal que se abre
+		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 0.5);
+		puertaCrisA.Draw(lightingShader);
+		glDisable(GL_BLEND);  //Desactiva el canal alfa 
+		// Para que no cambie el color el canal alpha a los demas objetos
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
+		// ********************** CASA FIN **********************
+
+
 		glBindVertexArray(0);
 
 

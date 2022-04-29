@@ -121,17 +121,17 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks ParedInterior_S.png
 Ns 18.00
-newmtl Puerta:phong3SG
+newmtl PuertaCrisC1:phong2SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd Manija.png
+map_Kd Cristal.png
 Ni 1.00
 Ks 0.00 0.00 0.00
-map_Ks Manija_S.png
+map_Ks Cristal_S.png
 Ns 18.00
-newmtl Puerta:phong4SG
+newmtl PuertaMarcC1:pasted__phong1SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
