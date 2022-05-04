@@ -1,0 +1,709 @@
+newmtl Casa:___Default
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl Casa:___Default2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl Casa:___Default4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl Casa:___Default6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl Casa:___Default8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl Casa:initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Casa:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grass.jpg
+Ni 1.00
+newmtl Casa:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Piso.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Casa:phong1SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa:phong1SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa:phong1SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa:phong1SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa:phong2SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa:phong2SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa:phong2SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa:phong2SG10
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa:phong5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Techo_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:___Default
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl WelcomeMatOBJ:Casa:___Default2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl WelcomeMatOBJ:Casa:___Default4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl WelcomeMatOBJ:Casa:___Default6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl WelcomeMatOBJ:Casa:___Default8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd dandelion_leaf.jpg
+map_Ka dandelion_leaf.jpg
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl WelcomeMatOBJ:Casa:initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl WelcomeMatOBJ:Casa:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grass.jpg
+Ni 1.00
+newmtl WelcomeMatOBJ:Casa:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Piso.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong1SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong1SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong1SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong1SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong2SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong2SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong2SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong2SG10
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Casa:phong5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Techo_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:Material__35
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.50
+Ks 0.00 0.00 0.00
+Ns 10.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ9:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ9:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ9:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ9:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ9:WelcomeMatOBJ5:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ9:WelcomeMatOBJ6:WelcomeMatOBJ5:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ9:WelcomeMatOBJ7:WelcomeMatOBJ6:WelcomeMatOBJ5:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ9:WelcomeMatOBJ8:WelcomeMatOBJ7:WelcomeMatOBJ6:WelcomeMatOBJ5:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ10:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ11:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ11:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ11:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ11:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ11:WelcomeMatOBJ5:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ11:WelcomeMatOBJ6:WelcomeMatOBJ5:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ11:WelcomeMatOBJ7:WelcomeMatOBJ6:WelcomeMatOBJ5:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ11:WelcomeMatOBJ8:WelcomeMatOBJ7:WelcomeMatOBJ6:WelcomeMatOBJ5:WelcomeMatOBJ4:WelcomeMatOBJ3:WelcomeMatOBJ2:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ12:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ13:WelcomeMatOBJ12:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ14:WelcomeMatOBJ13:WelcomeMatOBJ12:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ15:WelcomeMatOBJ14:WelcomeMatOBJ13:WelcomeMatOBJ12:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ16:WelcomeMatOBJ15:WelcomeMatOBJ14:WelcomeMatOBJ13:WelcomeMatOBJ12:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:WelcomeMatOBJ17:WelcomeMatOBJ16:WelcomeMatOBJ15:WelcomeMatOBJ14:WelcomeMatOBJ13:WelcomeMatOBJ12:WelcomeMatOBJ1:WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:pasted__lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd vidrioLamp.png
+Ni 1.00
+newmtl WelcomeMatOBJ:pasted__lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.png
+Ni 1.00
+newmtl WelcomeMatOBJ:pasted__pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Puerta.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Puerta_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Puerta.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Puerta_S.png
+Ns 18.00
+newmtl WelcomeMatOBJ:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd textureUV.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks textureUV_S.png
+Ns 18.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd vidrioLamp.png
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd madera.png
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd welcome.png
+Ni 1.00
+newmtl lampExt:default1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 100.00
+newmtl pasted__lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd vidrioLamp.png
+Ni 1.00
+newmtl pasted__phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Puerta.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Puerta_S.png
+Ns 18.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Puerta.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Puerta_S.png
+Ns 18.00
+newmtl phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd calle.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks calle_S.jpg
+Ns 18.00
