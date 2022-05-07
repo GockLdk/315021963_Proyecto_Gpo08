@@ -28,6 +28,8 @@
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
 void MouseCallback(GLFWwindow* window, double xPos, double yPos);
 void DoMovement();
+void animacion();
+void animPuertas();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -39,10 +41,16 @@ GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
 bool firstMouse = true;
+
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
-bool active;
+bool active = true;
 
+// Variables animaciones
+float rotPuerta = 0;
+bool abiertaPuerta = false;
+float movCristal = 0;
+bool abiertaCristal = false;
 
 // Positions of the point lights
 // Indicar en el lighting.frag el num de point ligths y agregar sus posiciones aqui
@@ -152,7 +160,7 @@ int main()
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
 
 	Model Casa ((char*)"Models/Casa/Casa.obj");
-	Model puerta ((char*)"Models/Casa/Puerta.obj");
+	Model puerta ((char*)"Models/Casa/Puerta2.obj");
 	Model marcoVen ((char*)"Models/Casa/MarcoVen.obj");
 	Model cristalVen ((char*)"Models/Casa/CristalVen.obj");
 	Model puertaCrisA ((char*)"Models/Casa/PuertaCrisA.obj");
@@ -192,6 +200,7 @@ int main()
 		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
 		glfwPollEvents();
 		DoMovement();
+		animacion();
 
 		// Clear the colorbuffer
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -289,7 +298,8 @@ int main()
 
 		// Puerta Entrada
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, -0.5f, 0.0f));
+		model = glm::translate(model, glm::vec3(-7.16f, 3.05f, 9.6f));
+		model = glm::rotate(model, glm::radians(rotPuerta),glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		puerta.Draw(lightingShader);
@@ -336,6 +346,7 @@ int main()
 		// Marco que se abre
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		model = glm::translate(model, glm::vec3(movCristal, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		puertaMarA.Draw(lightingShader);
@@ -344,6 +355,7 @@ int main()
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		model = glm::translate(model, glm::vec3(movCristal, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 0.5);
@@ -495,15 +507,16 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 
 	if (keys[GLFW_KEY_SPACE])
 	{
+		//// Luz
+		//if (active)
+		//{
+		//	Light1 = glm::vec3(1.0f, 1.0f, 0.0f);
+		//}
+		//else
+		//{
+		//	Light1 = glm::vec3(0);//Cuado es solo un valor en los 3 vectores pueden dejar solo una componente
+		//}
 		active = !active;
-		if (active)
-		{
-			Light1 = glm::vec3(1.0f, 1.0f, 0.0f);
-		}
-		else
-		{
-			Light1 = glm::vec3(0);//Cuado es solo un valor en los 3 vectores pueden dejar solo una componente
-		}
 	}
 }
 
@@ -523,4 +536,37 @@ void MouseCallback(GLFWwindow* window, double xPos, double yPos)
 	lastY = yPos;
 
 	camera.ProcessMouseMovement(xOffset, yOffset);
+}
+
+// Funcion que controla todas las animaciones
+void animacion()
+{
+	if (active)
+	{
+		animPuertas();
+	}
+}
+
+// Animacion de la puerta de entrada
+void animPuertas()
+{
+	// Puerta Entrada
+	if (rotPuerta > -90 && !abiertaPuerta)
+		rotPuerta -= 1.0f;
+	else
+		abiertaPuerta = true;
+	if (rotPuerta <= 0 && abiertaPuerta)
+		rotPuerta += 1.0f;
+	else
+		abiertaPuerta = false;
+
+	// Puerta Cristal
+	if (movCristal > -5.0 && !abiertaCristal)
+		movCristal -= 0.1f;
+	else
+		abiertaCristal = true;
+	if (movCristal < -0.1 && abiertaCristal)
+		movCristal += 0.1f;
+	else
+		abiertaCristal = false;
 }
