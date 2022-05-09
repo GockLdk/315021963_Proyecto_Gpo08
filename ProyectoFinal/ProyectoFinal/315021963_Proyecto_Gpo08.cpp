@@ -30,6 +30,7 @@ void MouseCallback(GLFWwindow* window, double xPos, double yPos);
 void DoMovement();
 void animacion();
 void animPuertas();
+void animKeyFrame();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -44,7 +45,9 @@ bool firstMouse = true;
 
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
+glm::vec3 PosIni(-6.13f, -0.5f, 4.55f);
 bool active = true;
+bool luces = true;
 
 // Variables animaciones
 float rotPuerta = 0;
@@ -54,11 +57,18 @@ bool abiertaCristal = false;
 
 // Positions of the point lights
 // Indicar en el lighting.frag el num de point ligths y agregar sus posiciones aqui
+
+// Positions of the point lights
 glm::vec3 pointLightPositions[] = {
-	glm::vec3(0.0f,0.0f,0.0f)
+	glm::vec3(0.0f,5.0f,0.0f)
+	/*glm::vec3(-3.15f,6.3f,10.79f),
+	glm::vec3(9.33f,6.3f,10.79f),
+	glm::vec3(0.0f,0.0f,0.0f),*/
 };
 
 glm::vec3 Light1 = glm::vec3(0);
+//glm::vec3 Light2 = glm::vec3(0);
+//glm::vec3 Light3 = glm::vec3(0);
 
 // Cuadrado para referencia de las luces
 //float vertices[] = {
@@ -110,6 +120,57 @@ glm::vec3 Light1 = glm::vec3(0);
 // Deltatime
 GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
+
+// Keyframes
+float posX = PosIni.x, posY = PosIni.y, posZ = PosIni.z, rotRodIzq = 0;
+
+#define MAX_FRAMES 9
+int i_max_steps = 50;
+int i_curr_steps = 0;
+typedef struct _frame
+{
+	//Variables para GUARDAR Key Frames
+	float posX;		//Variable para PosicionX
+	float posY;		//Variable para PosicionY
+	float posZ;		//Variable para PosicionZ
+	float incX;		//Variable para IncrementoX
+	float incY;		//Variable para IncrementoY
+	float incZ;		//Variable para IncrementoZ
+	float rotRodIzq;
+	float rotInc;
+
+}FRAME;
+
+FRAME KeyFrame[MAX_FRAMES];
+int FrameIndex = 2;			//introducir datos
+bool play = false;
+int playIndex = 0;
+
+
+
+//glm::vec3 LightP1;
+
+
+void resetElements(void)
+{
+	posX = KeyFrame[0].posX;
+	posY = KeyFrame[0].posY;
+	posZ = KeyFrame[0].posZ;
+
+	rotRodIzq = KeyFrame[0].rotRodIzq;
+
+}
+
+void interpolation(void)
+{
+
+	KeyFrame[playIndex].incX = (KeyFrame[playIndex + 1].posX - KeyFrame[playIndex].posX) / i_max_steps;
+	KeyFrame[playIndex].incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
+	KeyFrame[playIndex].incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
+
+	KeyFrame[playIndex].rotInc = (KeyFrame[playIndex + 1].rotRodIzq - KeyFrame[playIndex].rotRodIzq) / i_max_steps;
+
+}
 
 int main()
 {
@@ -181,6 +242,29 @@ int main()
 
 	/*Model Esfera((char*)"Models/Esfera/Esfera.obj");*/
 
+
+	//Inicialización de KeyFrames
+	for (int i = 0; i < MAX_FRAMES; i++)
+	{
+		KeyFrame[i].posX = 0;
+		KeyFrame[i].incX = 0;
+		KeyFrame[i].incY = 0;
+		KeyFrame[i].incZ = 0;
+		KeyFrame[i].rotRodIzq = 0;
+		KeyFrame[i].rotInc = 0;
+	}
+	// Fuargando animacion KEYFRAMES
+	KeyFrame[0].posX = posX;
+	KeyFrame[0].posY = posY;
+	KeyFrame[0].posZ = posZ;
+	KeyFrame[0].rotRodIzq = rotRodIzq;
+
+	// Fuargando animacion KEYFRAMES
+	KeyFrame[1].posX = -4.13f;
+	KeyFrame[1].posY = -0.5f;
+	KeyFrame[1].posZ = 3.0f;
+	KeyFrame[1].rotRodIzq = 135.0f;
+
 	// Set texture units
 	lightingShader.Use();
 	glUniform1i(glGetUniformLocation(lightingShader.Program, "material.diffuse"), 0);
@@ -220,24 +304,53 @@ int main()
 
 		// Directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.6f, 0.6f, 0.6f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.6f, 0.6f, 0.6f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.4f, 0.4f, 0.4f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 1.0f, 1.0f, 1.0f);
 
 
 		// Point light 1
 		glm::vec3 lightColor;
-		lightColor.x = abs(sin(glfwGetTime() * Light1.x));
-		lightColor.y = abs(sin(glfwGetTime() * Light1.y));
-		lightColor.z = sin(glfwGetTime() * Light1.z);
+		lightColor.x = Light1.x;
+		lightColor.y = Light1.y;
+		lightColor.z =  Light1.z;
+
+		/*glm::vec3 lightColor2;
+		lightColor2.x = Light2.x;
+		lightColor2.y = Light2.y;
+		lightColor2.z = Light2.z;
+
+		glm::vec3 lightColor3;
+		lightColor3.x = Light3.x;
+		lightColor3.y = Light3.y;
+		lightColor3.z = Light3.z;*/
 
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].position"), pointLightPositions[0].x, pointLightPositions[0].y, pointLightPositions[0].z);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].ambient"), lightColor.x, lightColor.y, lightColor.z);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].diffuse"), lightColor.x, lightColor.y, lightColor.z);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].specular"), 1.0f, 1.0f, 0.0f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].specular"), 1.0f, 1.0f, 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].constant"), 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].linear"), 0.045f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].quadratic"), 0.075f);
+
+		//// Point Light 2
+		//glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].position"), pointLightPositions[1].x, pointLightPositions[1].y, pointLightPositions[1].z);
+		//glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].ambient"), lightColor2.x, lightColor2.y, lightColor2.z);
+		//glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].diffuse"), lightColor2.x, lightColor2.y, lightColor2.z);
+		//glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].specular"), 1.0f, 1.0f, 0.0f);
+		//glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].constant"), 1.0f);
+		//glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].linear"), 0.045f);
+		//glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].quadratic"), 0.075f);
+		//
+		//// Point Light 3
+		//glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].position"), pointLightPositions[2].x, pointLightPositions[2].y, pointLightPositions[2].z);
+		//glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].ambient"), lightColor3.x, lightColor3.y, lightColor3.z);
+		//glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].diffuse"), lightColor3.x, lightColor3.y, lightColor3.z);
+		//glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].specular"), 1.0f, 1.0f, 0.0f);
+		//glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].constant"), 1.0f);
+		//glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].linear"), 0.045f);
+		//glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].quadratic"), 0.075f);
+
 
 		
 		// SpotLight
@@ -393,7 +506,9 @@ int main()
 		escritorio.Draw(lightingShader);
 		// Silla
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		//model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
+		model = glm::translate(model, glm::vec3(posX, posY, posZ));
+		model = glm::rotate(model, glm::radians(rotRodIzq), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		silla.Draw(lightingShader);
@@ -483,6 +598,11 @@ void DoMovement()
 
 	}
 
+
+	
+
+	
+
 }
 
 // Is called whenever a key is pressed/released via GLFW
@@ -507,16 +627,27 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 
 	if (keys[GLFW_KEY_SPACE])
 	{
-		//// Luz
-		//if (active)
-		//{
-		//	Light1 = glm::vec3(1.0f, 1.0f, 0.0f);
-		//}
-		//else
-		//{
-		//	Light1 = glm::vec3(0);//Cuado es solo un valor en los 3 vectores pueden dejar solo una componente
-		//}
+		
 		active = !active;
+	}
+
+	if (keys[GLFW_KEY_L])
+	{
+		luces = !luces;
+		// Luz
+		if (luces)
+		{
+			Light1 = glm::vec3(1.0f, 1.0f, 1.0f);
+			/*Light2 = glm::vec3(1.0f, 1.0f, 0.0f);
+			Light3 = glm::vec3(1.0f, 1.0f, 0.0f);*/
+			
+		}
+		else
+		{
+			Light1 = glm::vec3(0);//Cuado es solo un valor en los 3 vectores pueden dejar solo una componente
+			/*Light2 = glm::vec3(0);
+			Light3 = glm::vec3(0);*/
+		}
 	}
 }
 
@@ -544,7 +675,11 @@ void animacion()
 	if (active)
 	{
 		animPuertas();
+		animKeyFrame();
 	}
+
+	
+	
 }
 
 // Animacion de la puerta de entrada
@@ -569,4 +704,51 @@ void animPuertas()
 		movCristal += 0.1f;
 	else
 		abiertaCristal = false;
+}
+
+void animKeyFrame()
+{
+	if (play == false && (FrameIndex > 1))
+	{
+
+		resetElements();
+		//First Interpolation				
+		interpolation();
+		
+		play = true;
+		playIndex = 0;
+		i_curr_steps = 0;
+	}
+	if (play)
+	{
+		
+		if (i_curr_steps >= i_max_steps) //end of animation between frames?
+		{
+			playIndex++;
+			if (playIndex > FrameIndex - 2)	//end of total animation?
+			{
+				printf("Anim KeyFrame Silla\n");
+				playIndex = 0;
+				play = false;
+			}
+			else //Next frame interpolations
+			{
+				i_curr_steps = 0; //Reset counter
+								  //Interpolation
+				interpolation();
+			}
+		}
+		else
+		{
+			//Draw animation
+			posX += KeyFrame[playIndex].incX;
+			posY += KeyFrame[playIndex].incY;
+			posZ += KeyFrame[playIndex].incZ;
+
+			rotRodIzq += KeyFrame[playIndex].rotInc;
+
+			i_curr_steps++;
+		}
+
+	}
 }

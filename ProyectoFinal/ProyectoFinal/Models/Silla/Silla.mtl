@@ -3,12 +3,10 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd OfficeChair_D.png
 Ni 1.00
 Ks 0.00 0.00 0.00
-map_Ks OfficeChair_S.png
 Ns 18.00
-newmtl phong1SG
+newmtl Silla:phong1SG2
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -18,7 +16,7 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks metal_S.png
 Ns 18.00
-newmtl phong2SG
+newmtl Silla:phong2SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
@@ -28,7 +26,7 @@ Ni 1.00
 Ks 0.00 0.00 0.00
 map_Ks colchon_S.png
 Ns 18.00
-newmtl phong3SG
+newmtl Silla:phong3SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
