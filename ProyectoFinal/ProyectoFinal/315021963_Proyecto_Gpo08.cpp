@@ -47,6 +47,7 @@ bool firstMouse = true;
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 glm::vec3 PosIni(-6.13f, -0.5f, 4.55f);
+glm::vec3 PosIniPel(2.0f, 1.12f, 0.0f);
 bool active = true;
 bool luces = false;
 
@@ -76,7 +77,8 @@ GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
 
 // Keyframes
-float posX = PosIni.x, posY = PosIni.y, posZ = PosIni.z, rotRodIzq = 0;
+float posX = PosIni.x, posY = PosIni.y, posZ = PosIni.z, rotSilla = 0;
+float posXPel = PosIniPel.x, posYPel = PosIniPel.y, posZPel = PosIniPel.z, rotPel = 0;
 
 #define MAX_FRAMES 9
 int i_max_steps = 50;
@@ -90,8 +92,17 @@ typedef struct _frame
 	float incX;		//Variable para IncrementoX
 	float incY;		//Variable para IncrementoY
 	float incZ;		//Variable para IncrementoZ
-	float rotRodIzq;
+	float rotSilla;
 	float rotInc;
+
+	float posXPel;		//Variable para PosicionX
+	float posYPel;		//Variable para PosicionY
+	float posZPel;		//Variable para PosicionZ
+	float incXPel;		//Variable para IncrementoX
+	float incYPel;		//Variable para IncrementoY
+	float incZPel;		//Variable para IncrementoZ
+	float rotPel;
+	float rotIncPel;
 
 }FRAME;
 
@@ -109,7 +120,13 @@ void resetElements(void)
 	posY = KeyFrame[0].posY;
 	posZ = KeyFrame[0].posZ;
 
-	rotRodIzq = KeyFrame[0].rotRodIzq;
+	rotSilla = KeyFrame[0].rotSilla;
+
+	posXPel = KeyFrame[0].posXPel;
+	posYPel = KeyFrame[0].posYPel;
+	posZPel = KeyFrame[0].posZPel;
+
+	rotPel = KeyFrame[0].rotPel;
 
 }
 
@@ -120,7 +137,13 @@ void interpolation(void)
 	KeyFrame[playIndex].incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
 	KeyFrame[playIndex].incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
 
-	KeyFrame[playIndex].rotInc = (KeyFrame[playIndex + 1].rotRodIzq - KeyFrame[playIndex].rotRodIzq) / i_max_steps;
+	KeyFrame[playIndex].rotInc = (KeyFrame[playIndex + 1].rotSilla - KeyFrame[playIndex].rotSilla) / i_max_steps;
+
+	KeyFrame[playIndex].incXPel = (KeyFrame[playIndex + 1].posXPel - KeyFrame[playIndex].posXPel) / i_max_steps;
+	KeyFrame[playIndex].incYPel = (KeyFrame[playIndex + 1].posYPel - KeyFrame[playIndex].posYPel) / i_max_steps;
+	KeyFrame[playIndex].incZPel = (KeyFrame[playIndex + 1].posZPel - KeyFrame[playIndex].posZPel) / i_max_steps;
+
+	KeyFrame[playIndex].rotIncPel = (KeyFrame[playIndex + 1].rotPel - KeyFrame[playIndex].rotPel) / i_max_steps;
 
 }
 
@@ -200,6 +223,7 @@ int main()
 	Model muebleTV ((char*)"Models/MuebleTV/Cabinet.obj");
 	Model tv ((char*)"Models/TV/TV.obj");
 	Model controlTV ((char*)"Models/TV/Control.obj");
+	Model pelota ((char*)"Models/Pelota/Pelota.obj");
 
 	/*Model Esfera((char*)"Models/Esfera/Esfera.obj");*/
 
@@ -211,20 +235,39 @@ int main()
 		KeyFrame[i].incX = 0;
 		KeyFrame[i].incY = 0;
 		KeyFrame[i].incZ = 0;
-		KeyFrame[i].rotRodIzq = 0;
+		KeyFrame[i].rotSilla = 0;
 		KeyFrame[i].rotInc = 0;
+
+		KeyFrame[i].posXPel = 0;
+		KeyFrame[i].incXPel = 0;
+		KeyFrame[i].incYPel = 0;
+		KeyFrame[i].incZPel = 0;
+		KeyFrame[i].rotPel = 0;
+		KeyFrame[i].rotIncPel = 0;
 	}
-	// Fuargando animacion KEYFRAMES
+
+	// Guargando animacion KEYFRAMES
 	KeyFrame[0].posX = posX;
 	KeyFrame[0].posY = posY;
 	KeyFrame[0].posZ = posZ;
-	KeyFrame[0].rotRodIzq = rotRodIzq;
+	KeyFrame[0].rotSilla = rotSilla;
 
-	// Fuargando animacion KEYFRAMES
+	KeyFrame[0].posXPel = posXPel;
+	KeyFrame[0].posYPel = posYPel;
+	KeyFrame[0].posZPel = posZPel;
+	KeyFrame[0].rotPel = rotPel;
+
+
+	// Guargando animacion KEYFRAMES
 	KeyFrame[1].posX = -4.13f;
 	KeyFrame[1].posY = -0.5f;
 	KeyFrame[1].posZ = 3.0f;
-	KeyFrame[1].rotRodIzq = 135.0f;
+	KeyFrame[1].rotSilla = 135.0f;
+
+	KeyFrame[1].posXPel = 2.4f;
+	KeyFrame[1].posYPel = 1.02f;
+	KeyFrame[1].posZPel = 0.0f;
+	KeyFrame[1].rotPel = -30.0f;
 
 	// Set texture units
 	lightingShader.Use();
@@ -588,6 +631,15 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		mesa.Draw(lightingShader);
+		// Pelota
+		model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(0.025f, 1.02f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotPel), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(posXPel, posYPel, posZPel));
+		
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		pelota.Draw(lightingShader);
 		// Tapete
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
@@ -604,7 +656,7 @@ int main()
 		model = glm::mat4(1);
 		//model = glm::translate(model, glm::vec3(0.025f, -0.5f, 0.0f));
 		model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		model = glm::rotate(model, glm::radians(rotRodIzq), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotSilla), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		silla.Draw(lightingShader);
@@ -726,11 +778,6 @@ void DoMovement()
 
 
 	}
-
-
-	
-
-	
 
 }
 
@@ -856,7 +903,7 @@ void animKeyFrame()
 			playIndex++;
 			if (playIndex > FrameIndex - 2)	//end of total animation?
 			{
-				printf("Anim KeyFrame Silla\n");
+				printf("Animaciones KeyFrames\n");
 				playIndex = 0;
 				play = false;
 			}
@@ -874,7 +921,13 @@ void animKeyFrame()
 			posY += KeyFrame[playIndex].incY;
 			posZ += KeyFrame[playIndex].incZ;
 
-			rotRodIzq += KeyFrame[playIndex].rotInc;
+			rotSilla += KeyFrame[playIndex].rotInc;
+
+			posXPel += KeyFrame[playIndex].incXPel;
+			posYPel += KeyFrame[playIndex].incYPel;
+			posZPel += KeyFrame[playIndex].incZPel;
+
+			rotPel += KeyFrame[playIndex].rotIncPel;
 
 			i_curr_steps++;
 		}
