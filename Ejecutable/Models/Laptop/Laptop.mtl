@@ -1,0 +1,320 @@
+newmtl Casa:initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Casa:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grass.jpg
+Ni 1.00
+newmtl Casa:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Piso.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Casa:phong1SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa:phong1SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa:phong1SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa:phong1SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa:phong2SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa:phong2SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa:phong2SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa:phong5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Techo_S.png
+Ns 18.00
+newmtl Casa1:phong2SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa2:initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Casa2:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grass.jpg
+Ni 1.00
+newmtl Casa2:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Piso.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Piso_S.png
+Ns 18.00
+newmtl Casa2:phong1SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa2:phong1SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa2:phong1SG6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa2:phong1SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedExterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedExterior_S.png
+Ns 18.00
+newmtl Casa2:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa2:phong2SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa2:phong2SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa2:phong2SG8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa2:phong2SG10
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ParedInterior.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ParedInterior_S.png
+Ns 18.00
+newmtl Casa2:phong5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Techo.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Techo_S.png
+Ns 18.00
+newmtl Escritorio:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Superior.jpg
+Ni 1.00
+newmtl Escritorio:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Inferior.jpg
+Ni 1.00
+newmtl Laptop:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Notebook_Color.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks Laptop_S.png
+Ns 18.00
+newmtl Mesa:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Superior.jpg
+Ni 1.00
+newmtl Mesa:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Inferior.jpg
+Ni 1.00
+newmtl Silla:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd OfficeChair_D.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks OfficeChair_S.png
+Ns 18.00
+newmtl Tapete:initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Tapete:lambert1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Orilla.jpg
+Ni 1.00
+newmtl Tapete:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd tapete.png
+Ni 1.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00

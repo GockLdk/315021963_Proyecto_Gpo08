@@ -32,6 +32,7 @@ void DoMovement();
 void animacion();
 void animPuertas();
 void animKeyFrame();
+void animacionCarro();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -48,6 +49,7 @@ bool firstMouse = true;
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 glm::vec3 PosIni(-6.13f, -0.5f, 4.55f);
 glm::vec3 PosIniPel(2.0f, 1.12f, 0.0f);
+glm::vec3 PosIniCar(-43.0f, -0.4f, 25.0f);
 bool active = true;
 bool luces = false;
 
@@ -56,6 +58,17 @@ float rotPuerta = 0;
 bool abiertaPuerta = false;
 float movCristal = 0;
 bool abiertaCristal = false;
+
+//Animación del coche
+float movKitX = 0.0;
+float movKitZ = 0.0;
+float rotKit = 0.0;
+
+bool recorrido1 = true;
+bool recorrido2 = false;
+bool recorrido3 = false;
+bool recorrido4 = false;
+bool recorrido5 = false;
 
 // Positions of the point lights
 // Indicar en el lighting.frag el num de point ligths y agregar sus posiciones aqui
@@ -224,6 +237,8 @@ int main()
 	Model tv ((char*)"Models/TV/TV.obj");
 	Model controlTV ((char*)"Models/TV/Control.obj");
 	Model pelota ((char*)"Models/Pelota/Pelota.obj");
+
+	Model carro ((char*)"Models/Carro/Carro.obj");
 
 	/*Model Esfera((char*)"Models/Esfera/Esfera.obj");*/
 
@@ -690,7 +705,16 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		controlTV.Draw(lightingShader);
+
+		// Carro
+		model = glm::mat4(1);
+		model = glm::translate(model, PosIniCar + glm::vec3(movKitX, 0, movKitZ));
+		model = glm::rotate(model, glm::radians(rotKit), glm::vec3(0.0f, 1.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		carro.Draw(lightingShader);
 		
+
 		glBindVertexArray(0);
 
 
@@ -852,10 +876,8 @@ void animacion()
 	{
 		animPuertas();
 		animKeyFrame();
+		animacionCarro();
 	}
-
-	
-	
 }
 
 // Animacion de la puerta de entrada
@@ -903,7 +925,7 @@ void animKeyFrame()
 			playIndex++;
 			if (playIndex > FrameIndex - 2)	//end of total animation?
 			{
-				printf("Animaciones KeyFrames\n");
+				/*printf("Animaciones KeyFrames\n");*/
 				playIndex = 0;
 				play = false;
 			}
@@ -931,6 +953,68 @@ void animKeyFrame()
 
 			i_curr_steps++;
 		}
+
+	}
+}
+
+void animacionCarro()
+{
+	//Movimiento del coche
+	if (active)
+	{
+		if (recorrido1)
+		{
+			movKitX += 1.0f;
+			if (movKitX > 85)
+			{
+				recorrido1 = false;
+				recorrido2 = true;
+			}
+		}
+		if (recorrido2)
+		{
+			rotKit = -90;
+			movKitZ += 1.0f;
+			if (movKitZ > 10)
+			{
+				recorrido2 = false;
+				recorrido3 = true;
+
+			}
+		}
+
+		if (recorrido3)
+		{
+			rotKit = 180;
+			movKitX -= 1.0f;
+			if (movKitX < 0)
+			{
+				recorrido3 = false;
+				recorrido4 = true;
+			}
+		}
+
+		if (recorrido4)
+		{
+			rotKit = 90;
+			movKitZ -= 1.0f;
+			if (movKitZ < 0)
+			{
+				recorrido4 = false;
+				recorrido5 = true;
+			}
+		}
+		if (recorrido5)
+		{
+			rotKit = 0;
+			movKitX += 1.0f;
+			if (movKitX > 0)
+			{
+				recorrido5 = false;
+				recorrido1 = true;
+			}
+		}
+
 
 	}
 }

@@ -1,0 +1,38 @@
+newmtl Silla:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 18.00
+newmtl Silla:phong1SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks metal_S.png
+Ns 18.00
+newmtl Silla:phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd colchon.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks colchon_S.png
+Ns 18.00
+newmtl Silla:phong3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd plastico.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks plastico_S.png
+Ns 18.00

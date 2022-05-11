@@ -1,4 +1,4 @@
-
+*.ipch
 *.recipe
 ProyectoFinal/.vs/*.*
 ProyectoFinal/ProyectoFinal/Debug/*.*
